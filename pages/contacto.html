@@ -52,16 +52,52 @@
         </nav>
 
     </header> -->
+    <main class="container-fluid py-5">
+        <div class="row">
+            <div class="col-12">
 
-    <main class="sin-configurar">
-        <section class="sin-configurar">
-            <article class="sin-configurar">
-                <h2 class="subti">Contáctame</h2>
-                <p>¿Tienes alguna pregunta o quieres colaborar? ¡No dudes en contactarme!</p>
-            </article>
-        </section>
+                <div class="card p-4 p-md-5 shadow-sm bg-white border-0 rounded-4 w-100">
 
+                    <!-- Título y bajada -->
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold fs-2 mb-2">Contacto</h2>
+                        <p class="text-muted fs-6 mb-0">Dejanos tu consulta y te responderemos a la brevedad.</p>
+                    </div>
+
+                    <form>
+                        <!-- Nombre completo a lo ancho -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
+                            <input type="text" class="form-control py-2 w-100" id="nombre"
+                                placeholder="Ingresá tu nombre" required>
+                        </div>
+
+                        <!-- Correo electrónico a lo ancho -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Correo electrónico</label>
+                            <input type="email" class="form-control py-2 w-100" id="email"
+                                placeholder="nombre@ejemplo.com" required>
+                        </div>
+
+                        <!-- Mensaje a lo ancho -->
+                        <div class="mb-4">
+                            <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+                            <textarea class="form-control py-2 w-100" id="mensaje" rows="4"
+                                placeholder="Escribí tu consulta aquí..." required></textarea>
+                        </div>
+
+                        <!-- Botón a lo ancho -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary py-2 fw-semibold w-100">Enviar mensaje</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
     </main>
+
 
     <footer>
         <p>&copy; 2026. Todos los derechos reservados.</p>
