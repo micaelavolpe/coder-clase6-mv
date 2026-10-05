@@ -1,3 +1,128 @@
 @use "../utilities/variables" as *;
 @use "../utilities/extend" as *;
 @use "../utilities/mixin" as *;
+
+main {
+    color: $color-oscuro;
+    background-color: $color-claro;
+    @include flex(column, center, center, 1rem);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: $color-destacado;
+    text-align: center;
+    margin: 1.5rem 0 1rem;
+    padding: 0.5rem 1rem;
+    border-top: 0.1rem solid $color-terciario-claro;
+    border-bottom: 0.2rem solid $color-secundario-oscuro;
+}
+
+.subti {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+}
+
+.hero {
+    background-color: $color-terciario-claro;
+    color: $color-oscuro;
+    @include flex(column, space-around, center, null);
+    padding: 1rem;
+    margin-top: 1rem;
+    @extend %redondeo;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    a {
+        background-color: $color-oscuro;
+        color: $color-claro;
+        padding: 0.5rem;
+        border: 0.1rem solid $color-claro;
+        @extend %redondeo;
+        margin-top: 0.5rem;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $color-claro;
+            color: $color-oscuro;
+        }
+
+        &:active {
+            background-color: $color-destacado;
+            color: $color-claro;
+
+        }
+
+        &:focus {
+            outline: 0.1rem solid $color-secundario-oscuro;
+        }
+    }
+}
+
+
+.pagina-faq {
+    width: 100%;
+}
+
+.faq {
+    width: 100%;
+}
+
+.accordion {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    background-color: $color-secundario-claro;
+    margin-bottom: 1rem;
+    border: 0.1rem solid transparent;
+    @extend %redondeo;
+    overflow: hidden;
+
+    &:hover {
+        border: 0.1rem solid $color-destacado;
+    }
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: $color-secundario-claro;
+    color: $color-oscuro;
+    font-family: $fuente;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-destacado;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.25rem rgba(151, 174, 203, 0.5);
+        border-color: $color-terciario-claro;
+    }
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: $color-oscuro;
+    color: white;
+}
+
+.accordion-body {
+    padding: 1rem;
+    background-color: white;
+    color: $color-oscuro;
+    border-top: 0.1rem solid $color-secundario-oscuro;
+}

@@ -1,3 +1,109 @@
 @use "../utilities/variables" as *;
 @use "../utilities/extend" as *;
 @use "../utilities/mixin" as *;
+
+
+section {
+    @include flex(row, space-evenly, null, null);
+}
+
+.tarjeta {
+    @include flex(column, null, center, null);
+    background-color: $color-secundario-claro;
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+    @extend %redondeo;
+    transition: all 0.3s;
+
+    img {
+        margin: 1rem;
+        @extend %redondeo;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+        border: 0.1rem solid $color-destacado;
+    }
+}
+
+figure,
+figcaption {
+    @include flex(column, null, center, null);
+    margin: 0.5rem;
+}
+
+.sobre-mi {
+    @include flex(column, null, center, null);
+    margin: 2rem 1rem;
+}
+
+.tarjeta2,
+.tarjeta3 {
+    padding: 0.5rem;
+    max-width: 100%;
+    @include grid(1fr, null, null, 1rem);
+}
+
+
+@media (min-width: 768px) {
+
+    .tarjeta2,
+    .tarjeta3 {
+        @include grid(repeat(2, 1fr), null, null, null);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tarjeta2 {
+        @include grid(repeat(4, 1fr), null, null, null);
+    }
+
+    .tarjeta3 {
+        @include grid(repeat(3, 1fr), null, null, null);
+    }
+}
+
+.perfil {
+    grid-area: perfil;
+}
+
+.tarjeta-exp {
+    grid-area: exp;
+}
+
+.tarjeta-form {
+    grid-area: form;
+}
+
+.tarjeta-asp {
+    grid-area: asp;
+}
+
+.grid-sobre-mi {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-areas:
+        "perfil"
+        "exp"
+        "form"
+        "asp";
+}
+
+@media (min-width: 1024px) {
+    .grid-sobre-mi {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "perfil exp"
+            "perfil form"
+            "perfil asp";
+        align-items: center;
+    }
+}

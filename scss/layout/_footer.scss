@@ -1,3 +1,30 @@
 @use "../utilities/variables" as *;
 @use "../utilities/extend" as *;
 @use "../utilities/mixin" as *;
+
+
+footer {
+    padding: 2rem;
+    border: 0.1rem solid $color-secundario-oscuro;
+    @include flex(row, space-between, center, null);
+    background-color: $color-oscuro;
+    width: 100%;
+    color: white;
+
+    ul {
+        @include flex(row, space-evenly, center, 1.5rem);
+    }
+
+    li a,
+    p {
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        @extend %redondeo;
+        transition: all 0.3s;
+
+        &:hover {
+            color: $color-secundario-claro;
+        }
+    }
+}
