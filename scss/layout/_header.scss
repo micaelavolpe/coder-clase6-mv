@@ -1,0 +1,88 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+.encabezado {
+    @include flex(row, space-between, center, null);
+    background-color: $color-oscuro;
+    width: 100%;
+    color: white;
+    padding: 2rem;
+    border: 0.1rem solid $color-secundario-oscuro;
+
+    .titulo-header {
+        font-family: $fuente;
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 2rem;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        border-top: 0.1rem solid $color-terciario-claro;
+        border-bottom: 0.2rem solid $color-secundario-oscuro;
+    }
+
+/* Navbar de Bootstrap adaptado a tu diseño */
+
+    .mi-navbar {
+        background-color: transparent;
+
+        .navbar-nav {
+            @include flex(column, center, center, 1.5rem);
+            padding: 1rem 0;
+            text-align: center;
+
+            @media (min-width: 992px) {
+                @include flex(row, space-evenly, center, 1.5rem);
+                padding: 0;
+            }
+
+            li {
+                @extend %enlaces;
+            }
+
+            .nav-link {
+                color: white;
+                font-family: $fuente;
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                text-decoration: none;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: $color-secundario-claro;
+                }
+
+                &:active {
+                    outline: 0.1rem solid $color-secundario-claro;
+                    box-shadow: none;
+                }
+
+                &:focus {
+                    color: $color-destacado;
+                    outline: 0.1rem solid $color-terciario-claro;
+                }
+            }
+        }
+    }
+
+    /* Botón hamburguesa */
+
+    .navbar-toggler {
+        border: 0.1rem solid $color-secundario-claro;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        color: $color-claro;
+
+        .navbar-toggler-icon {
+            background-image: none;
+            position: relative;
+            width: 1.5rem;
+            height: 1.2rem;
+            display: block;
+        }
+    }
+}

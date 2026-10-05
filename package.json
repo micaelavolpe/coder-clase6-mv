@@ -1,0 +1,20 @@
+{
+  "name": "clases_pseudoclas_bs",
+  "version": "1.0.0",
+  "description": "Proyecto desarrollado para el curso de **Desarrollo Web** en Coderhouse.",
+  "homepage": "https://github.com/micaelavolpe/coder-clase6-mv#readme",
+  "bugs": {
+    "url": "https://github.com/micaelavolpe/coder-clase6-mv/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micaelavolpe/coder-clase6-mv.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
