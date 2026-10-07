@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .encabezado .mi-navbar .navbar-nav li {
   text-decoration: none;
   list-style: none;
@@ -30,6 +31,9 @@ footer p, .hero, .hero a, .accordion-item {
   border-top: 0.1rem solid #97aecb;
   border-bottom: 0.2rem solid #6e4933;
 }
+.encabezado {
+  /* Navbar de Bootstrap adaptado a tu diseño */
+}
 .encabezado .mi-navbar {
   background-color: transparent;
 }
@@ -42,7 +46,7 @@ footer p, .hero, .hero a, .accordion-item {
   padding: 1rem 0;
   text-align: center;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .encabezado .mi-navbar .navbar-nav {
     display: flex;
     flex-direction: row;
@@ -207,6 +211,10 @@ img {
   border-top: 0.1rem solid #6e4933;
 }
 
+.herramientas {
+  font-weight: 700;
+}
+
 footer {
   padding: 2rem;
   border: 0.1rem solid #6e4933;
@@ -289,10 +297,13 @@ figcaption {
 }
 
 @media (min-width: 768px) {
-  .tarjeta2,
-  .tarjeta3 {
+  .tarjeta2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .tarjeta3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1024px) {
@@ -324,19 +335,19 @@ figcaption {
 .grid-sobre-mi {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas: "perfil" "exp" "form" "asp";
   gap: 0.5rem;
   width: 100%;
-  max-width: 1200px;
-  grid-template-areas: "perfil" "exp" "form" "asp";
 }
-
 @media (min-width: 1024px) {
   .grid-sobre-mi {
+    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas: "perfil exp" "perfil form" "perfil asp";
     align-items: center;
   }
 }
+
 * {
   padding: 0;
   margin: 0;

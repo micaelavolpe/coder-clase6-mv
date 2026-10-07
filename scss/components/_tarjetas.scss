@@ -49,16 +49,20 @@ figcaption {
     @include grid(1fr, null, null, 1rem);
 }
 
+// Media Queries de las tarjetas (aplica en página de inicio y proyectos)
 
-@media (min-width: 768px) {
 
-    .tarjeta2,
-    .tarjeta3 {
+@include tablet {
+    .tarjeta2 {
         @include grid(repeat(2, 1fr), null, null, null);
+    }
+
+    .tarjeta3 {
+        @include grid(repeat(3, 1fr), null, null, null);
     }
 }
 
-@media (min-width: 1024px) {
+@include escritorio {
     .tarjeta2 {
         @include grid(repeat(4, 1fr), null, null, null);
     }
@@ -67,6 +71,8 @@ figcaption {
         @include grid(repeat(3, 1fr), null, null, null);
     }
 }
+
+// Grid área en página Sobre mí más MediaQs
 
 .perfil {
     grid-area: perfil;
@@ -85,25 +91,16 @@ figcaption {
 }
 
 .grid-sobre-mi {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    width: 100%;
-    max-width: 1200px;
-    grid-template-areas:
-        "perfil"
+    @include grid(1fr, null, "perfil"
         "exp"
         "form"
-        "asp";
-}
+        "asp", 0.5rem);
+    width: 100%;
 
-@media (min-width: 1024px) {
-    .grid-sobre-mi {
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas:
-            "perfil exp"
+    @include escritorio {
+        @include grid(1fr 2fr, null, "perfil exp"
             "perfil form"
-            "perfil asp";
+            "perfil asp", null);
         align-items: center;
     }
 }
