@@ -12,7 +12,8 @@ Podés ver la versión en vivo del sitio acá:
 - Bootstrap 5
 
 ## 📁 Estructura del proyecto
-- `/index.html`: Página principal
-- `/pages/`: Secciones del sitio (contacto, etc.)
-- `/css/`: Hojas de estilo personalizadas
-- `/assets/`: Imágenes y recursos
+- index.html: página principal.
+- pages/: páginas internas, como Sobre mí, Proyectos, FAQ y Contacto.
+- css/: hojas de estilo compiladas.
+- scss/: archivos fuente SCSS.
+- img/: imágenes utilizadas en el sitio.
