@@ -1,0 +1,127 @@
+@use "../utilities/variables" as *;
+@use "../utilities/extend" as *;
+@use "../utilities/mixin" as *;
+
+/* 1. Variables de movimiento */
+$duracion-hover: 0.3s;
+$curva-suave: ease;
+
+/* 2. Tarjetas: elevación sutil */
+.tarjeta {
+    transition:
+        transform $duracion-hover $curva-suave,
+        box-shadow $duracion-hover $curva-suave,
+        border-color $duracion-hover $curva-suave;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 18px rgba(44, 26, 20, 0.12);
+        border-color: $color-destacado;
+    }
+
+    img {
+        transition: transform 0.4s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.02);
+    }
+}
+
+/* 3. Botón principal */
+.hero a {
+    transition:
+        background-color $duracion-hover $curva-suave,
+        color $duracion-hover $curva-suave,
+        transform $duracion-hover $curva-suave,
+        box-shadow $duracion-hover $curva-suave;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(44, 26, 20, 0.18);
+    }
+
+    &:focus-visible {
+        outline: 3px solid $color-destacado;
+        outline-offset: 4px;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+}
+
+/* 4. Navegación: subrayado animado */
+.encabezado .mi-navbar .navbar-nav .nav-link {
+    position: relative;
+    transition:
+        color $duracion-hover $curva-suave;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.15rem;
+        height: 2px;
+        background-color: #97aecb;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform $duracion-hover $curva-suave;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+        transform: scaleX(1);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-claro;
+        outline-offset: 3px;
+    }
+}
+
+/* 5. Acordeón FAQ */
+.accordion-item {
+    transition:
+        border-color $duracion-hover $curva-suave,
+        box-shadow $duracion-hover $curva-suave;
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba(44, 26, 20, 0.10);
+    }
+}
+
+/* 6. Enlaces del footer */
+footer a {
+    transition:
+        color $duracion-hover $curva-suave,
+        transform $duracion-hover $curva-suave;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-claro;
+        outline-offset: 4px;
+    }
+}
+
+/* 7. Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

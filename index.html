@@ -8,6 +8,8 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Animaciones AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Mi CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -40,13 +42,13 @@
     </header>
 
     <main>
-        <aside class="hero">
+        <aside class="hero" data-aos="fade-up" data-aos-delay="50">
             <h2 class="subti">¿Queres cotizar tu proyecto?</h2>
             <a href="#"> CLIQUEÁ ACÁ</a>
         </aside>
 
         <section class="tarjeta3">
-            <article class="tarjeta">
+            <article class="tarjeta" data-aos="fade-up" data-aos-delay="100">
                 <h2 class="subti">Sobre este proyecto</h2>
                 <img src="./img/desarolloweb.jpg" alt="Imagen alternativa con titulo desarrollo web">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellendus provident doloribus
@@ -54,7 +56,7 @@
                     voluptas hic ex cum eius mollitia molestiae.</p>
             </article>
 
-            <article class="tarjeta">
+            <article class="tarjeta" data-aos="fade-up" data-aos-delay="150">
                 <h2 class="subti">Objetivos</h2>
                 <img src="./img/desarolloweb.jpg" alt="Imagen alternativa con titulo desarrollo web">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita autem, dolores, accusamus quo
@@ -62,7 +64,7 @@
                     iusto dolorum? Voluptate!</p>
             </article>
 
-            <article class="tarjeta">
+            <article class="tarjeta" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="subti">Herramientas adquiridas</h2>
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
@@ -114,6 +116,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <!-- Animaciones AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Init AOS-->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 80
+        });
+    </script>
 </body>
 
 </html>
