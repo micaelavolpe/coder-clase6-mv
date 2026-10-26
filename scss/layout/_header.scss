@@ -20,6 +20,10 @@
         text-align: center;
         border-top: 0.1rem solid $color-terciario-claro;
         border-bottom: 0.2rem solid $color-secundario-oscuro;
+            img {
+        margin: 1rem;
+        @extend %redondeo;
+    }
     }
 
 /* Navbar de Bootstrap adaptado a tu diseño */

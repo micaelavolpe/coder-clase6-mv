@@ -10,21 +10,21 @@ footer {
     background-color: $color-oscuro;
     width: 100%;
     color: white;
+    position: relative;
+}
 
     ul {
-        @include flex(row, space-evenly, center, 1.5rem);
-    }
+    @include flex(row, space-evenly, center, 1.5rem);
+}
 
-    li a,
-    p {
-        color: white;
-        font-size: 1.2rem;
-        padding: 0.5rem;
-        @extend %redondeo;
-        transition: all 0.3s;
+    li a {
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    @extend %redondeo;
+    transition: all 0.3s;
 
-        &:hover {
-            color: $color-secundario-claro;
-        }
+    &:hover {
+        color: $color-secundario-claro;
     }
 }

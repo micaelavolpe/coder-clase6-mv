@@ -4,8 +4,7 @@
   list-style: none;
 }
 
-.tarjeta, .tarjeta img, footer li a,
-footer p, .hero, .hero a, .accordion-item {
+.tarjeta, .tarjeta img, li a, .hero, .hero a, .accordion-item, .encabezado .titulo-header img {
   border-radius: 0.8rem;
 }
 
@@ -30,6 +29,9 @@ footer p, .hero, .hero a, .accordion-item {
   text-align: center;
   border-top: 0.1rem solid #97aecb;
   border-bottom: 0.2rem solid #6e4933;
+}
+.encabezado .titulo-header img {
+  margin: 1rem;
 }
 .encabezado {
   /* Navbar de Bootstrap adaptado a tu diseño */
@@ -129,7 +131,8 @@ img {
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  margin-top: 1rem;
+  margin: 1rem;
+  animation: sombra-promocion 2s ease infinite alternate;
 }
 .hero h2 {
   font-size: 2rem;
@@ -137,7 +140,7 @@ img {
 .hero a {
   background-color: #2C1A14;
   color: #faf1c8;
-  padding: 0.5rem;
+  padding: 0.7rem;
   border: 0.1rem solid #faf1c8;
   margin-top: 0.5rem;
   transition: all 0.3s;
@@ -198,7 +201,6 @@ img {
   box-shadow: 0 0 0 0.25rem rgba(151, 174, 203, 0.5);
   border-color: #97aecb;
 }
-
 .accordion-button:not(.collapsed) {
   background-color: #2C1A14;
   color: white;
@@ -211,10 +213,6 @@ img {
   border-top: 0.1rem solid #6e4933;
 }
 
-.herramientas {
-  font-weight: 700;
-}
-
 footer {
   padding: 2rem;
   border: 0.1rem solid #6e4933;
@@ -225,23 +223,24 @@ footer {
   background-color: #2C1A14;
   width: 100%;
   color: white;
+  position: relative;
 }
-footer ul {
+
+ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   gap: 1.5rem;
 }
-footer li a,
-footer p {
+
+li a {
   color: white;
   font-size: 1.2rem;
   padding: 0.5rem;
   transition: all 0.3s;
 }
-footer li a:hover,
-footer p:hover {
+li a:hover {
   color: #a5b8ce;
 }
 
@@ -363,6 +362,100 @@ a,
 li {
   text-decoration: none;
   list-style: none;
+}
+
+/* 1. Variables de movimiento */
+/* 2. Tarjetas: elevación sutil */
+.tarjeta {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(44, 26, 20, 0.12);
+  border-color: #800e22;
+}
+.tarjeta img {
+  transition: transform 0.4s ease;
+}
+.tarjeta:hover img {
+  transform: scale(1.02);
+}
+
+/* 3. Botón principal */
+.hero a {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(44, 26, 20, 0.18);
+}
+.hero a:focus-visible {
+  outline: 3px solid #800e22;
+  outline-offset: 4px;
+}
+.hero a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 4. Navegación: subrayado animado */
+.encabezado .mi-navbar .navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+&:hover::after,
+&:focus-visible::after {
+  transform: scaleX(1);
+}
+
+&:focus-visible {
+  outline: 2px solid #faf1c8;
+  outline-offset: 3px;
+}
+
+/* 5. Acordeón FAQ */
+.accordion-item {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.accordion-item:hover {
+  box-shadow: 0 4px 12px rgba(44, 26, 20, 0.1);
+}
+
+/* 6. Enlaces del footer */
+footer a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+footer a:hover {
+  transform: translateY(-2px);
+}
+footer a:focus-visible {
+  outline: 2px solid #faf1c8;
+  outline-offset: 4px;
+}
+
+/* 7. Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@keyframes sombra-promocion {
+  0% {
+    box-shadow: 0 0 0 rgba(44, 26, 20, 0.12);
+  }
+  100% {
+    box-shadow: 0 8px 18px rgba(44, 26, 20, 0.12);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -57,18 +57,6 @@ $curva-suave: ease;
     position: relative;
     transition:
         color $duracion-hover $curva-suave;
-
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0.5rem;
-        right: 0.5rem;
-        bottom: 0.15rem;
-        height: 2px;
-        background-color: #97aecb;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform $duracion-hover $curva-suave;
     }
 
     &:hover::after,
@@ -80,7 +68,7 @@ $curva-suave: ease;
         outline: 2px solid $color-claro;
         outline-offset: 3px;
     }
-}
+
 
 /* 5. Acordeón FAQ */
 .accordion-item {
@@ -111,6 +99,7 @@ footer a {
 
 /* 7. Accesibilidad: reducir movimiento */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -123,5 +112,14 @@ footer a {
     [data-aos] {
         opacity: 1 !important;
         transform: none !important;
+    }
+}
+
+@keyframes sombra-promocion {
+    0% {
+        box-shadow: 0 0 0 rgba(44, 26, 20, 0.12);
+    }
+    100% {
+        box-shadow: 0 8px 18px rgba(44, 26, 20, 0.12);
     }
 }
